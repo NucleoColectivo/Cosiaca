@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País de Cosiacas, Ciegos y Puritanos - Juan Alejandro Ramírez</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat (Headings) and Nunito (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #FDFBF8;
+            color: #2d1e12;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .nav-link {
+            transition: color 0.3s ease, border-color 0.3s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+        .nav-link:hover {
+            color: #F4B400;
+            border-bottom-color: #F4B400;
+        }
+        /* Dynamic Header Style */
+        header {
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        header .nav-logo {
+            color: white;
+            transition: color 0.3s ease;
+        }
+        header .main-nav .nav-link {
+             color: white;
+        }
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header.scrolled .nav-logo {
+            color: #F4B400;
+        }
+        header.scrolled .main-nav .nav-link {
+            color: #374151; /* text-gray-700 */
+        }
+        header.scrolled .main-nav .nav-link:hover {
+             color: #F4B400;
+        }
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .product-card .p-4 {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-gray-800 bg-pattern">
+
+    <header class="fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-montserrat font-bold nav-logo">Cosiaca</a>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 main-nav">
+                <a href="#el-libro" class="nav-link font-semibold">El Libro</a>
+                <a href="#tienda" class="nav-link font-semibold">Tienda</a>
+                <a href="#podcast" class="nav-link font-semibold">Podcast</a>
+                <a href="#stand-up" class="nav-link font-semibold">Stand-Up</a>
+                <a href="#cosiacabot" class="nav-link font-semibold">CosiacaBot</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#el-libro" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">El Libro</a>
+            <a href="#tienda" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Tienda</a>
+            <a href="#podcast" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Podcast</a>
+            <a href="#stand-up" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Stand-Up</a>
+            <a href="#cosiacabot" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">CosiacaBot</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="min-h-screen flex items-center bg-cover bg-center text-white pt-20 px-6" style="background-image: url('IMG/03 Robo del gallo.png');">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="container mx-auto max-w-4xl text-center relative z-10">
+                 <h1 class="text-4xl md:text-6xl font-montserrat font-black mb-4 text-white uppercase" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">¡Cómo vivir a costillas de los demás!</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-gray-200">
+                    Un viaje literario y escatológicamente costumbrista que te hará reír, reflexionar y vivir sabroso.
+                </p>
+                <div class="mt-8">
+                    <a href="#el-libro" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+                        Descubre el Libro
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="el-libro" class="py-20 md:py-28 bg-white reveal">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="flex justify-center reveal">
+                        <div class="bg-white p-4 shadow-2xl rounded-lg transform -rotate-3 hover:rotate-0 transition-transform duration-300 w-full max-w-xs">
+                           <img src="IMG/PORTADA_3 low.png" alt="Portada del libro País de Cosiacas, Ciegos y Puritanos" class="w-full h-auto rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/400x600/cccccc/ffffff?text=Imagen+no+disponible';">
+                        </div>
+                    </div>
+                    <div class="text-left reveal">
+                        <h2 class="font-montserrat text-4xl font-bold mb-4 text-gray-900">El Libro</h2>
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                             La Vida de Cosiaca es una novela escatológicamente costumbrista que nos sumerge en el mundo de José García: el pícaro más legendario de Antioquia. Entre flatulencias, bolitas de adivinar y peleas de gallos, esta obra te hará reír a carcajadas y reflexionar sobre la vida sin afanes. Disponible en físico y digital.
+                        </p>
+                         <div class="bg-gray-100 border-l-4 border-amber-500 p-4 rounded-r-lg shadow-sm">
+                            <p class="font-semibold">Advertencia al lector:</p>
+                            <p class="italic">"Puedes tener efectos secundarios, ejemplo, cagarte de la risa... ¡o sentir alguna sensación parecida!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tienda" class="py-20 md:py-28 bg-gray-50 reveal">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="font-montserrat text-4xl font-bold text-gray-900">Tienda Oficial</h2>
+                    <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto">Consigue productos únicos con frases y escenas del libro. ¡Haz parte del universo de Cosiaca!</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="product-card reveal"><img src="IMG/Relajo.png" alt="Camiseta Naranja" class="w-full h-64 object-cover"><div class="p-4 text-center"><h4 class="font-semibold text-lg">Camiseta 'Me Relajo'</h4><p class="text-sm">"Mejor me relajo que me deshago"</p><a href="#" class="mt-4 inline-block bg-amber-500 text-white font-bold py-2 px-6 rounded-full hover:bg-amber-600 transition-colors">Ver Producto</a></div></div>
+                    <div class="product-card reveal" style="transition-delay: 100ms;"><img src="IMG/Cosiaca_ Un Brindis de Vida.png" alt="Camiseta La Vida de Cosiaca"><div class="p-4 text-center"><h4 class="font-semibold text-lg">Camiseta 'La Vida'</h4><p class="text-sm">"La Vida de Cosiaca"</p><a href="#" class="mt-4 inline-block bg-amber-500 text-white font-bold py-2 px-6 rounded-full hover:bg-amber-600 transition-colors">Ver Producto</a></div></div>
+                    <div class="product-card reveal" style="transition-delay: 200ms;"><img src="IMG/Taza%20poncho%20y%20sabiduri%CC%81a%20vintage.png" alt="Camiseta Verde" class="w-full h-64 object-cover"><div class="p-4 text-center"><h4 class="font-semibold text-lg">Camiseta 'No es Pecado'</h4><p class="text-sm">"No todo lo que huele mal es pecado"</p><a href="#" class="mt-4 inline-block bg-amber-500 text-white font-bold py-2 px-6 rounded-full hover:bg-amber-600 transition-colors">Ver Producto</a></div></div>
+                    <div class="product-card reveal" style="transition-delay: 300ms;"><img src="IMG/Con%20dignidad%20sin%20madrugar.png" alt="Camiseta Roja" class="w-full h-64 object-cover"><div class="p-4 text-center"><h4 class="font-semibold text-lg">Camiseta 'Cosiaca'</h4><p class="text-sm">"Icono de Cosiaca"</p><a href="#" class="mt-4 inline-block bg-amber-500 text-white font-bold py-2 px-6 rounded-full hover:bg-amber-600 transition-colors">Ver Producto</a></div></div>
+                    <div class="product-card reveal"><img src="IMG/Taza%20Vintage%20con%20Mensaje%20Ir%C3%B3nico.png" alt="Taza de café" class="w-full h-64 object-cover"><div class="p-4 text-center"><h4 class="font-semibold text-lg">Pocillo 'El que huele'</h4><p class="text-sm">"El que huele, dura"</p><a href="#" class="mt-4 inline-block bg-amber-500 text-white font-bold py-2 px-6 rounded-full hover:bg-amber-600 transition-colors">Ver Producto</a></div></div>
+                    <div class="product-card reveal" style="transition-delay: 100ms;"><img src="IMG/Taza%20con%20ilustaci%C3%B3n%20vintage%20y%20humor.png" alt="Taza de café" class="w-full h-64 object-cover"><div class="p-4 text-center"><h4 class="font-semibold text-lg">Pocillo 'Digo Peos'</h4><p class="text-sm">"Digo peos y punto."</p><a href="#" class="mt-4 inline-block bg-amber-500 text-white font-bold py-2 px-6 rounded-full hover:bg-amber-600 transition-colors">Ver Producto</a></div></div>
+                    <div class="product-card reveal" style="transition-delay: 200ms;"><img src="IMG/Taza%20de%20Cosiaca%20y%20Risoterapia.png" alt="Taza de café" class="w-full h-64 object-cover"><div class="p-4 text-center"><h4 class="font-semibold text-lg">Pocillo 'Un Pepino'</h4><p class="text-sm">"Me importa un pepino..."</p><a href="#" class="mt-4 inline-block bg-amber-500 text-white font-bold py-2 px-6 rounded-full hover:bg-amber-600 transition-colors">Ver Producto</a></div></div>
+                    <div class="product-card reveal" style="transition-delay: 300ms;"><img src="IMG/Taza%20de%20risa%20y%20tradicio%CC%81n.png" alt="Taza de café" class="w-full h-64 object-cover"><div class="p-4 text-center"><h4 class="font-semibold text-lg">Pocillo 'Barriga Llena'</h4><p class="text-sm">"Barriga llena, corazón contento"</p><a href="#" class="mt-4 inline-block bg-amber-500 text-white font-bold py-2 px-6 rounded-full hover:bg-amber-600 transition-colors">Ver Producto</a></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mas-alla" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6 space-y-24">
+                <div id="podcast" class="reveal">
+                    <div class="text-center mb-16">
+                         <h2 class="font-montserrat text-4xl font-bold text-gray-900">Podcast</h2>
+                         <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto">Escucha el último episodio de Las Trovas de Cosiaca.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-12 items-center bg-gray-50 p-8 rounded-lg shadow-inner">
+                         <div class="flex justify-center">
+                             <img src="IMG/Trovas.png" alt="Las Trovas de Cosiaca" class="rounded-lg shadow-xl w-full max-w-md">
+                         </div>
+                         <div class="text-left">
+                             <h3 class="font-montserrat text-2xl font-bold mb-2 text-amber-700">Episodio Destacado</h3>
+                             <h4 class="font-montserrat text-xl font-bold mb-4 text-gray-800">Picardía, Sátira y la Colombia Eterna</h4>
+                             <p class="text-gray-600 mb-6">Un viaje sonoro por el humor y la crítica social que definen a Cosiaca, desde el siglo XIX hasta nuestros días.</p>
+                             <audio controls class="w-full">
+                                 <!-- 
+                                    IMPORTANTE: La ruta local "Audio/..." no funcionará en una página web publicada.
+                                    Debes subir tu archivo de audio a un servidor y reemplazar la URL de ejemplo de abajo 
+                                    con la URL pública de tu archivo de audio.
+                                 -->
+                                 <source src="Audio/Cosiaca_%20Picardi%CC%81a,%20Sa%CC%81tira%20y%20la%20Colombia%20Eterna%20del%20Siglo%20XIX%20al%20Hoy.mp3" type="audio/mpeg">
+                                 Tu navegador no soporta el elemento de audio.
+                             </audio>
+                         </div>
+                    </div>
+                </div>
+
+                <div id="stand-up" class="grid md:grid-cols-2 gap-12 items-center reveal">
+                    <div class="flex justify-center md:order-2">
+                        <img src="IMG/Cosiaca_%20Talleres%20y%20Risas%20en%20Vivo.png" alt="Promoción de talleres y stand-up de Cosiaca" class="rounded-xl shadow-lg w-full max-w-sm">
+                    </div>
+                    <div class="text-left md:order-1">
+                        <h2 class="font-montserrat text-4xl font-bold mb-4 text-gray-900">Talleres y Stand-Up</h2>
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed">Disfruta de presentaciones en vivo donde la risa y el sarcasmo se mezclan con reflexiones campesinas. Cosiaca en carne y hueso, en giras por colegios, teatros y fondas.</p>
+                        <a href="#" class="bg-amber-500 text-white font-bold py-3 px-8 rounded-full hover:bg-amber-600 transition-colors">Próximas Fechas</a>
+                    </div>
+                </div>
+
+                <div id="cosiacabot" class="grid md:grid-cols-2 gap-12 items-center reveal">
+                    <div class="text-left">
+                       <h2 class="font-montserrat text-4xl font-bold mb-4 text-gray-900">CosiacaBot</h2>
+                       <p class="text-lg text-gray-700 mb-6 leading-relaxed">¿Quieres charlar con el mismísimo Cosiaca? Búscalo abajo a la derecha, en la esquina de tu pantalla. Pídele un consejo, un chisme o un verso. ¡Él te responderá con su propia voz!</p>
+                       <p class="text-sm text-gray-500">Impulsado por la magia de ElevenLabs.</p>
+                   </div>
+                   <div class="flex justify-center">
+                        <img src="IMG/Conversación divertida con CosiacaBot.png" alt="CosiacaBot, una conversación divertida" class="rounded-xl shadow-lg w-full max-w-sm">
+                   </div>
+               </div>
+            </div>
+        </section>
+
+        <section id="cta" class="py-20 bg-amber-500 text-white">
+            <div class="container mx-auto px-6 text-center reveal">
+                <h2 class="font-montserrat text-4xl font-bold mb-4">¿Listo para reír y reflexionar?</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto">
+                    Consigue tu ejemplar y sumérgete en una Antioquia como nunca antes te la habían contado.
+                </p>
+                <div class="flex justify-center gap-4 flex-wrap">
+                    <a href="#el-libro" class="bg-white text-amber-600 font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">Comprar Libro</a>
+                    <a href="#tienda" class="bg-gray-800 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">Ir a la Tienda</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <a href="https://wa.me/573001234567?text=Hola,%20estoy%20interesado%20en%20el%20libro%20de%20Cosiaca." 
+       target="_blank" 
+       class="whatsapp-fab bg-green-500 hover:bg-green-600 text-white font-bold p-4 rounded-full shadow-lg transition-transform transform hover:scale-110 flex items-center justify-center"
+       aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp fa-2x"></i>
+    </a>
+    
+    <footer class="text-white py-12 bg-[#2C2A29]">
+        <div class="container mx-auto px-6 text-center">
+            <p>Creado por Alejandro Ramírez • Núcleo Colectivo</p>
+            <h3 class="font-montserrat text-xl font-bold my-4 text-white">Síguenos en</h3>
+             <div class="flex justify-center gap-6 mb-6">
+                <a href="#" class="text-white hover:text-amber-400 transition-colors duration-300" aria-label="Facebook"><i class="fab fa-facebook-f fa-2x"></i></a>
+                <a href="#" class="text-white hover:text-amber-400 transition-colors duration-300" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#" class="text-white hover:text-amber-400 transition-colors duration-300" aria-label="Tiktok"><i class="fab fa-tiktok fa-2x"></i></a>
+             </div>
+        </div>
+    </footer>
+    
+    <!-- Floating ElevenLabs Widget -->
+    <elevenlabs-convai agent-id="agent_01jwdmjmkafg78dja7dm0yfgva" widget-position="bottom-right"></elevenlabs-convai>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // --- DYNAMIC HEADER SCRIPT ---
+            const handleScroll = () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            };
+            window.addEventListener('scroll', handleScroll);
+
+            // --- MOBILE MENU TOGGLE ---
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when a link is clicked
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+
+            // --- SCROLL ANIMATION SCRIPT ---
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            revealElements.forEach(el => observer.observe(el));
+        });
+    </script>
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+</body>
+</html>

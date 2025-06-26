@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background: #fff8ec;
+  color: #3e2e13;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background: #2a2a2a;
+  color: #e6e6e6;
+}
+
+.main-header {
+  background: url('https://placehold.co/1600x500?text=La+Vida+de+Cosiaca') center/cover no-repeat;
+  color: white;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.main-header h1 {
+  font-size: 3rem;
+  margin: 0;
+  animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.main-header p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #f3e600;
+  padding: 1rem;
+  font-weight: bold;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #7a4419;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.main-nav a:hover {
+  transform: scale(1.1);
+  color: #552f13;
+}
+
+.main-nav button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #7a4419;
+}
+
+main section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #6f4316;
+  position: relative;
+}
+
+h2::after {
+  content: '💫';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: #7a4419;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.cta:hover {
+  transform: scale(1.05);
+  background: #552f13;
+}
+
+textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+#chatOutput {
+  margin-top: 1rem;
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  min-height: 60px;
+}
+
+footer {
+  background: #3e2e13;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  .main-header h1 {
+    font-size: 2.2rem;
+  }
+  .main-nav {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .cta {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header h1 {
+    font-size: 1.6rem;
+  }
+  .main-header p {
+    font-size: 1rem;
+  }
+  nav a {
+    font-size: 1rem;
+  }
+  .cta {
+    padding: 0.6rem 1.2rem;
+  }
+}
