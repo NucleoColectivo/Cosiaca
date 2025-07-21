@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Núcleo Colectivo: un espacio para la creación, colaboración y transformación social en Medellín." />
+  <meta property="og:title" content="Núcleo Colectivo" />
+  <meta property="og:description" content="Un espacio para la creación, colaboración y transformación social en Medellín." />
+  <meta property="og:image" content="IMG/LOGO2.png" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <title>Núcleo Colectivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: "Montserrat", sans-serif;
+      background-image: url(IMG/ChatGPT10.png);
+    }
+    .color-title {
+      color: white;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-black">
+
+  <!-- Header -->
+  <header class="bg-[#F8C300] py-4 px-6 flex justify-between items-center shadow-lg sticky top-0 z-10">
+    <img src="IMG/LOGO3.png" alt="Logo de Núcleo Colectivo en amarillo y negro" class="h-11" />
+    <nav>
+      <ul class="flex space-x-6 text-lg font-medium">
+        <li><a href="#inicio" class="hover:text-gray-700">Inicio</a></li>
+        <li><a href="#nosotros" class="hover:text-gray-700">Nosotros</a></li>
+        <li><a href="#actividades" class="hover:text-gray-700">Actividades</a></li>
+        <li><a href="#proyectos" class="hover:text-gray-700">Proyectos</a></li>
+        <li><a href="#noticias" class="hover:text-gray-700">Noticias</a></li>
+        <li><a href="#contacto" class="hover:text-gray-700">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="text-center py-11 px-6">
+    <img src="IMG/LOGO2.png" alt="Inicio - Logo Núcleo Colectivo" class="max-w-md mx-auto rounded-lg shadow-lg" loading="lazy" />
+  </section>
+
+  <!-- Nosotros -->
+  <section id="nosotros" class="bg-gray-100 py-20 px-6 text-center">
+    <h2 class="text-5xl md:text-6xl font-bold mb-4">NÚCLEO COLECTIVO</h2>
+    <h5 class="text-3xl font-semibold mb-8">Fomentando la Co-creación en Medellín</h5>
+    <p class="text-2xl font-semibold mb-6">Creación, Colaboración y Transformación Social.</p>
+    <p class="text-lg max-w-2xl mx-auto mb-14">
+      Un espacio dinámico que fomenta la co-creación, el intercambio de conocimientos y la transformación social entre artistas, emprendedores y la comunidad de Medellín.
+    </p>
+    <div class="max-w-2xl mx-auto space-y-6 text-lg">
+      <p><strong>Espacio Interdisciplinario:</strong> Conecta talentos emergentes y establecidos para la experimentación y el aprendizaje mutuo.</p>
+      <p><strong>IA y Programación:</strong> Integra herramientas creativas para explorar nuevas fronteras de expresión.</p>
+      <p><strong>Objetivos Clave:</strong> Establecer un espacio accesible, fomentar el aprendizaje práctico e impulsar la economía creativa.</p>
+    </div>
+    <img src="IMG/URL_DE_IMAGEN_NOSOTROS.png" alt="Personas colaborando" class="mt-10 max-w-lg mx-auto rounded-lg shadow-lg" loading="lazy" />
+  </section>
+  
+  <!-- Carrusel de imágenes -->
+<div class="relative max-w-2xl mx-auto mt-10">
+  <div id="carousel" class="overflow-hidden rounded-lg shadow-lg">
+    <div class="flex transition-transform duration-700 ease-in-out" style="transform: translateX(0%)">
+      <img src="IMG/01.png" alt="Imagen 1" class="w-full flex-shrink-0" loading="lazy" />
+      <img src="IMG/02.jpg" alt="Imagen 2" class="w-full flex-shrink-0" loading="lazy" />
+      <img src="IMG/03.jpg" alt="Imagen 3" class="w-full flex-shrink-0" loading="lazy" />
+      
+      
+    </div>
+  </div>
+  <div class="flex justify-between absolute top-1/2 left-0 right-0 transform -translate-y-1/2 px-4">
+    <button onclick="moverCarrusel(-1)" class="bg-black bg-opacity-50 text-white px-3 py-1 rounded-full">&larr;</button>
+    <button onclick="moverCarrusel(1)" class="bg-black bg-opacity-50 text-white px-3 py-1 rounded-full">&rarr;</button>
+  </div>
+</div>
+
+  <!-- Actividades -->
+  <section id="actividades" class="bg-[#F8C300] py-20 px-6 text-center">
+    <h2 class="text-3xl font-semibold mb-12">Metodología/Actividades</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <!-- Repite este bloque para cada actividad -->
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold mb-4">Talleres</h3>
+        <p>Artes visuales, diseño, tecnología y emprendimiento creativo.</p>
+        <img src="IMG/URL_DE_IMAGEN_TALLERES.png" alt="Taller artístico" class="mt-4 rounded-md shadow-md" loading="lazy" />
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold mb-4">Laboratorios Abiertos</h3>
+        <p>Espacio para desarrollar proyectos, colaborar y recibir mentoría.</p>
+        <img src="IMG/URL_DE_IMAGEN_LABORATORIOS.png" alt="Laboratorio creativo" class="mt-4 rounded-md shadow-md" loading="lazy" />
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold mb-4">Proyectos Comunitarios</h3>
+        <p>Obras participativas que reflejan identidad barrial.</p>
+        <img src="IMG/URL_DE_IMAGEN_PROYECTOS.png" alt="Intervención artística" class="mt-4 rounded-md shadow-md" loading="lazy" />
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold mb-4">Eventos Multidisciplinarios</h3>
+        <p>Festivales que combinan arte, música y tecnología.</p>
+        <img src="IMG/URL_DE_IMAGEN_EVENTOS.png" alt="Festival artístico" class="mt-4 rounded-md shadow-md" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+  <section id="proyectos" class="bg-gray-100 py-20 px-6 text-center">
+    <h2 class="text-3xl font-semibold mb-12">PROYECTOS</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <img src="IMG/08.png" alt="Desarrollo de Habilidades" class="mb-4 rounded-md shadow-md" loading="lazy" />
+        <h3 class="text-xl font-semibold mb-4">Desarrollo de Habilidades</h3>
+        <p>Formación artística, tecnológica y emprendedora.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <img src="IMG/12.png" alt="Tejido Comunitario" class="mb-4 rounded-md shadow-md" loading="lazy" />
+        <h3 class="text-xl font-semibold mb-4">Tejido Comunitario</h3>
+        <p>Inclusión social y participación ciudadana activa.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <img src="IMG/13.png" alt="Revitalización Urbana" class="mb-4 rounded-md shadow-md" loading="lazy" />
+        <h3 class="text-xl font-semibold mb-4">Revitalización Urbana</h3>
+        <p>Arte público y transformación de espacios.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Noticias -->
+  <section id="noticias" class="bg-[#F8C300] py-20 px-6 text-center">
+    <h2 class="text-3xl font-semibold mb-12">Noticias y Eventos</h2>
+    <div id="noticias-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"></div>
+  </section>
+
+  <!-- Lanzamiento Núcleobot -->
+  <section id="lanzamiento-nucleobot" class="bg-gradient-to-br from-purple-800 via-pink-600 to-orange-400 py-12 px-6 sm:px-12 text-white rounded-xl shadow-xl mt-10">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-11">
+      <div class="w-full md:w-1/2">
+        <img src="IMG/nucleobot.png" alt="Lanzamiento de Núcleobot" class="rounded-2xl shadow-lg w-full object-cover" />
+      </div>
+      <div class="w-full md:w-1/1">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Lanzamiento de Núcleobot</h2>
+        <p class="text-lg sm:text-xl leading-relaxed">
+          Presentamos a <strong class="text-yellow-300">Núcleobot</strong>, el nuevo chatbot interactivo de <span class="text-yellow-200 font-semibold">Núcleo Colectivo</span>. Su identidad conecta personas con <em>conocimiento, arte y acción colectiva</em>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inscripción -->
+  <section id="inscripcion" class="bg-purple-600 py-20 px-6 text-center">
+    <h2 class="text-4xl font-semibold mb-8 text-white">INSCRIPCIÓN</h2>
+    <div class="max-w-2xl mx-auto">
+      <iframe title="Formulario de inscripción Núcleo Colectivo" src="https://forms.gle/8WQ7ZeEdC1UgajLZ7" width="100%" height="800" style="border:0;" loading="lazy">Cargando…</iframe>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="bg-gray-100 py-20 px-6 text-center">
+    <h2 class="text-3xl font-semibold mb-8">Contacto</h2>
+    <form id="contacto-form" class="max-w-md mx-auto space-y-4">
+      <input type="text" name="nombre" placeholder="Nombre" required class="w-full border border-gray-300 rounded-md py-2 px-4" />
+      <input type="email" name="correo" placeholder="Correo Electrónico" required class="w-full border border-gray-300 rounded-md py-2 px-4" />
+      <textarea name="mensaje" placeholder="Mensaje" required class="w-full border border-gray-300 rounded-md py-2 px-4"></textarea>
+      <button type="submit" class="bg-black text-white py-3 px-6 rounded-md hover:bg-gray-900 transition shadow-md">Enviar Mensaje</button>
+    </form>
+  </section>
+
+  <!-- Chatbot -->
+  <chat-bot platform_id="950526ae-88f6-43d6-b7e9-985204a22cd0" user_id="2d9ea340-1d80-4700-9748-acb3eea561bf" chatbot_id="01895677-e46b-41b0-9e4c-3b2a247604c0"></chat-bot>
+  <script src="https://cdn.chatsimple.ai/chat-bot-loader.js" defer></script>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-6 text-center">
+    <p class="text-sm">© 2025 Núcleo Colectivo - Medellín, Colombia</p>
+    <div class="mt-2 space-x-4">
+      <a href="https://www.instagram.com/nucleo_colectivo_art/" target="_blank" class="hover:text-[#F8C300]">Instagram</a>
+      <a href="mailto:contacto@nucleocolectivo.org" class="hover:text-[#F8C300]">Correo</a>
+    </div>
+  </footer>
+
+  <!-- Noticias script -->
+  <script>
+    const noticiasData = [
+      {
+        titulo: "Talleres de Arte Digital",
+        fecha: "Próximamente",
+        descripcion: "Aprende a crear arte digital con IA.",
+        imagen: "IMG/05.png"
+      },
+      {
+        titulo: "Laboratorios de Co-creación",
+        fecha: "Próximamente",
+        descripcion: "Colabora en proyectos innovadores.",
+        imagen: "IMG/02.png"
+      },
+      {
+        titulo: "Eventos Multidisciplinarios",
+        fecha: "Próximamente",
+        descripcion: "Muestra de arte y tecnología.",
+        imagen: "IMG/04.png"
+      }
+    ];
+
+    const container = document.getElementById("noticias-container");
+    noticiasData.forEach(n => {
+      const div = document.createElement("div");
+      div.className = "bg-white rounded-lg shadow-md p-4";
+      div.innerHTML = `
+        <img src="${n.imagen}" loading="lazy" alt="${n.titulo}" class="rounded-md mb-4 shadow" />
+        <h3 class="text-xl font-semibold mb-2">${n.titulo}</h3>
+        <p class="text-sm text-gray-500 mb-2">${n.fecha}</p>
+        <p class="text-base">${n.descripcion}</p>
+      `;
+      container.appendChild(div);
+    });
+
+    document.getElementById("contacto-form").addEventListener("submit", e => {
+      e.preventDefault();
+      alert("Mensaje enviado. ¡Gracias por contactar a Núcleo Colectivo!");
+      e.target.reset();
+    });
+  </script>
+<script>
+  
+  let indexCarrusel = 0;
+
+  function moverCarrusel(direccion) {
+    const carrusel = document.querySelector("#carousel > div");
+    const total = carrusel.children.length;
+    indexCarrusel = (indexCarrusel + direccion + total) % total;
+    carrusel.style.transform = `translateX(-${indexCarrusel * 100}%)`;
+  }
+
+  // Opcional: cambio automático cada 5 segundos
+  setInterval(() => moverCarrusel(1), 5000);
+</script>
+
+</body>
+</html>
